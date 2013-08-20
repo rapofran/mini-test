@@ -1,18 +1,18 @@
-require 'minitest/spec'
 require 'minitest/autorun'
 require 'person' # because of t.libs << 'models' works just like this !
 
 describe Person do
   # Using let better
-  #before do
-  #  @person = Person.new
-  #end
+  # before do
+  #   @person = Person.new
+  # end
 
-  let(:person) { Person.new }
+  # let(:person) { Person.new }
 
-  describe 'to_s' do
-    it 'should return a string class' do
-      person.to_s.class.must_equal String
+  describe 'full name' do
+    it 'has full name' do
+      person = Person.new "Juan Francisco", "Raposeiras"
+      person.full_name.must_equal "Juan Francisco Raposeiras"
     end
   end
 
