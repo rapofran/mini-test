@@ -1,5 +1,5 @@
 class Person
   def to_s
-    "pepe"
+    'pepe'
   end
 end
