@@ -1,4 +1,5 @@
 require 'minitest/autorun'
+require 'minitest/pride'
 require 'person' # because of t.libs << 'models' works just like this !
 
 describe Person do
