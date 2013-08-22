@@ -1,20 +1,13 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require 'person' # because of t.libs << 'models' works just like this !
+require 'person' # because of t.libs << 'spec' works just like this !
 
 describe Person do
-  # Using let better
-  # before do
-  #   @person = Person.new
-  # end
+  describe 'when name and lastname are not empty' do
+    let (:person) { Person.new 'Juan Francisco', 'Raposeiras' }
 
-  # let(:person) { Person.new }
-
-  describe 'full name' do
-    it 'has full name' do
-      person = Person.new "Juan Francisco", "Raposeiras"
-      person.full_name.must_equal "Juan Francisco Raposeiras"
+    it 'returns a valid full name' do
+      person.full_name.must_equal 'Juan Francisco Raposeiras'
     end
   end
-
 end
